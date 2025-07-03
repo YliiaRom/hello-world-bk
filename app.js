@@ -1,9 +1,5 @@
 const express = require("express");
-app.use(
-  cors({
-    origin: "https://stupendous-peony-885dcf.netlify.app",
-  })
-);
+
 const fs = require("fs").promises;
 const path = require("path");
 
@@ -17,7 +13,11 @@ const delayMiddleware = (req, res, next) => {
   setTimeout(next, DELAY_MS);
 };
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://stupendous-peony-885dcf.netlify.app",
+  })
+);
 app.use(express.json());
 app.use(delayMiddleware);
 
