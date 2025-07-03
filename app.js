@@ -1,5 +1,9 @@
 const express = require("express");
-const cors = require("cors");
+app.use(
+  cors({
+    origin: "https://stupendous-peony-885dcf.netlify.app",
+  })
+);
 const fs = require("fs").promises;
 const path = require("path");
 
